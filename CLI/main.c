@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
+
+// structure with information on each element, separate file
+
+// hash function wich returns Z of each element
+
+// find the element
+
+// find out their molar mass and also multiply by the indices
+
 int main(int argc, char** argv)
 {
     if (argc != 2)
