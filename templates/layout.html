@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alchemy API: {% block title %}{% endblock %}</title>
+
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/static/Logo.svg" alt="Logo" height="32" class="logo__header"></a>
+        <button type="button" class="button__header"><i class="fa-solid fa-bars"></i></button>
+        <nav>
+            <div class="links__header">
+                <a href="/"><img src="/static/Logo.svg" alt="Logo" height="32" class="logo__header"></a>
+                <a href="/applications">Applications</a>
+                <a href="/#features">Features</a>
+                <a href="/api">API</a>
+            </div>
+            <div class="flex socials__header">
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-solid fa-mug-hot"></i></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block main%}{% endblock %}
+    </main>
+    <footer>
+        <a href="/"><img src="/static/Logo.svg" alt="Logo" height="48" class="logo__footer"></a>
+        <section>
+            <h3>Explore</h3>
+            <p class="link__footer">Applications</p>
+            <p class="link__footer">Features</p>
+            <p class="link__footer">API</p>
+        </section>
+        <section>
+            <h3>External</h3>
+            <p class="link__footer">GitHub</p>
+            <p class="link__footer">YouTube</p>
+        </section>
+        <div class="flex socials__footer">
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-solid fa-mug-hot"></i></a>
+        </div>
+        <p class="copyright">&copy; Spinei Victor 2023</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/09c573bc29.js" crossorigin="anonymous"></script>
+</body>
+</html>

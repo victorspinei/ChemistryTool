@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 import json
 
@@ -18,7 +18,7 @@ def find_element(symbol):
 @app.route("/")
 def index():
     """Landing page"""
-    return "<h1>Hello from flask</h1>"
+    return render_template("index.html")
 
 # Route to get a single element
 @app.route("/api/elements/<symbol>")
@@ -44,3 +44,6 @@ def get_all_elements():
     with open("elements.json", "r") as file:
         elements = json.load(file)
     return jsonify(elements)
+
+if __name__ == "__main__":
+    app.run(debug=True)
