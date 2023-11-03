@@ -52,7 +52,33 @@ async function fetchData() {
         } 
         return null;
     }
+    const buttons = document.querySelectorAll('.e')
+    const modal = document.querySelector('#myModal');
 
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            let symbol = btn.querySelector('abbr').innerText
+
+            const element = findElement(symbol)
+
+            let head = element['name']
+            
+            let html = `<p class="text-secondary">Atomic Number: <span class="fw-bold text-light">${element['atomic_number']}</span></p>
+            <p class="text-secondary">Atomic Weight: <span class="fw-bold text-light">${element['atomic_weight']}</span></p>
+            <p class="text-secondary">Electron Configuration: <span class="fw-bold text-light">${element['electron_configuration']}</span></p>
+            <p class="text-secondary">Group: <span class="fw-bold text-light">${element['group']}</span></p>
+            <p class="text-secondary">Period: <span class="fw-bold text-light">${element['period']}</span></p>
+            <p class="text-secondary">Block: <span class="fw-bold text-light">${element['block']}</span></p>
+            <p class="text-secondary">Category: <span class="fw-bold text-light">${element['category']}</span></p>`
+
+            modal.querySelector(".modal-title").innerHTML = head;
+            modal.querySelector(".modal-body").innerHTML = html;
+        })
+        modal.addEventListener('shown.bs.modal', () => {
+            btn.focus()
+        })
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -79,16 +105,3 @@ function parseChemicalFormula(formula) {
   return elements;
 }
 
-const buttons = document.querySelectorAll('.e')
-const modal = document.querySelector('#myModal');
-
-
-buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        console.log(btn.querySelector('abbr').innerText)
-        
-    })
-    modal.addEventListener('shown.bs.modal', () => {
-    btn.focus()
-    })
-});
