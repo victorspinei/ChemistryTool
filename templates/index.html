@@ -1,10 +1,51 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %}   
 
-{% block title %}
-    Home
+{% block links%}
+   <a class="nav-link active" aria-current="page" href="/">API</a>
+   <a class="nav-link" href="/apps">Apps</a>
 {% endblock %}
 
 {% block main %}
-
+   <main class="text-start p-5 mx-auto">
+      <h1 class="text-light mb-2 fw-bold fs-1"><i class="fa-solid fa-file"></i> Quick Start Guide</h1>
+      <p class="text-secondary mb-3">My API is incredibly easy to use, check out the code samples bellow to get started:</p>
+      <h2 class="fw-bold text-light mb-2">Fetch an Element</h2>
+      <p class="text-secondary">All you need to do is send a request to:</p>
+      <ul class="mb-3">
+         <li class="text-purple-medium fw-light"><a class="text-decoration-none text-purple-medium" href="/api/all">https://[thiswebsite]/api/all/</a></li>
+         <li class="text-purple-medium mb-2 fw-light"><a class="text-decoration-none text-purple-medium" href="/api/elements?symbol=O">https://[thiswebsite]/api/elements?symbol=[symbol]</a></li>
+         <p class="fs-6 text-secondary mb-1">where:</p>
+         <li class="text-purple-light-emphasis fw-light">[symbol] - is the symbol of the element you want ot get information on.</li>
+      </ul>
+      <h2 class="text-light mb-2 fw-bold">Sample Requests</h2>
+      <p class="text-secondary mb-1"><a class="text-decoration-none text-purple-medium" href="/api/all">https://[thiswebsite]/api/all/</a> - Get info on all elements</p>
+      <p class="text-secondary mb-3"><a class="text-decoration-none text-purple-medium" href="/api/elements?symbol=H&symbol=O">https://[thiswebsite]/api/elements?symbol=H&symbol=O</a> - Get info on the elements Hydrogen and Oxygen</p>
+      <h2 class="fw-bold text-light mb-2">Response</h2>
+      <p class="text-secondary">This result data is formatted as a JSON array.</p>
+      <div class="bg-dark rounded border border-1">
+         <pre><code class="text-light">
+   [
+      {
+         "symbol": "H",
+         "name": "Hydrogen",
+         "atomic_number": 1,
+         "atomic_weight": 1.008,
+         "electron_configuration": "1s¹",
+         "group": 1,
+         "period": 1,
+         "block": "s",
+         "category": "Nonmetal",
+         "color": "Colorless",
+         "oxidation_states": [-1],
+         "higher_oxidation_states": null,
+         "compounds_with_hydrogen": ["H2", "H2O"],
+         "melting_point": 14.01,
+         "boiling_point": 20.28,
+         "density": 0.0899
+      },
+      // More Data...
+   ]</code></pre>
+      </div>
+   </main>
 
 {% endblock %}

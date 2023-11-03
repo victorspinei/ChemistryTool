@@ -1,0 +1,413 @@
+{% extends "layout.html" %}
+
+{% block links %}
+   <a class="nav-link" aria-current="page" href="/">API</a>
+   <a class="nav-link active" href="/apps">Apps</a>
+{% endblock %}
+
+{% block main %}
+<main class="text-start p-5 mx-auto grid">
+    <section class="mb-5">
+        <h2 class="text-light fw-bold mb-2">Molar Mass Calculator</h2>
+        <p class="text-secondary fw-light">Enter the element or the sumbstance you want to calculate the molar mass of and press <kbd>Calculate</kbd></p>
+        <p class="text-purple-light">For example: H2SO4 - 98 g/mol</p>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark border rounded text-light" id="inputElement" placeholder="H2SO4">
+            <label for="inputElement" class="text-secondary">Element/Substance</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-dark border rounded text-light" id="outputElement" placeholder="98g" readonly>
+            <label for="outputElement" class="text-secondary">Result</label>
+        </div>
+        <button id="buttonElement" class="col-auto btn btn-outline-light">Calculate</button>
+    </section>
+    <hr class="border border-light border-1 opacity-100">
+    <section>
+
+        <h1 class="mb-3 text-light fw-bold text-center">Select An Element To See Info On</h1>
+
+
+        <ol class="periodic-table">
+<li class="hydrogen">
+  <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Hydrogen">H</abbr></button>
+</li>
+<li id="helium" class="noble-gas">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Helium">He</abbr></button>
+</li>
+<li class="alkali">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Lithium">Li</abbr></button>
+</li>
+<li class="alkaline">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Beryllium">Be</abbr></button>
+</li>
+<li id="boron" class="metalloid">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Boron">B</abbr></button>
+</li>
+<li class="polyatomic-non-metal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Carbon">C</abbr></button>
+</li>
+<li class="diatomic-nonmetal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Nitrogen">N</abbr></button>
+</li>
+<li class="diatomic-nonmetal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Oxygen">O</abbr></button>
+</li>
+<li class="diatomic-nonmetal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Fluorine">F</abbr></button>
+</li>
+<li class="noble-gas">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Neon">Ne</abbr></button>
+</li>
+<li class="alkali">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Sodium">Na</abbr></button>
+</li>
+<li class="alkaline">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Magnesium">Mg</abbr></button>
+</li>
+<li id="aluminium">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Aluminium">Al</abbr></button>
+</li>
+<li class="metalloid">
+    <button class="e" data-bs-target="#myModal"><abbr title="Silicon">Si</abbr></button>
+</li>
+<li class="polyatomic-non-metal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Phosphorus">P</abbr></button>
+</li>
+<li class="polyatomic-non-metal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Sulphur">S</abbr></button>
+</li>
+<li class="diatomic-nonmetal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Chlorine">Cl</abbr></button>
+</li>
+<li class="noble-gas">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Argon">Ar</abbr></button>
+</li>
+<li class="alkali">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Potassium">K</abbr></button>
+</li>
+<li class="alkaline">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Calcium">Ca</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Scandium">Sc</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Titanium">Ti</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Vanadium">Ti</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Chromium">Cr</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Manganese">Mn</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Iron">Fe</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Cobalt">Co</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Nickel">Ni</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Copper">Cu</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Zinc">Zn</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Gallium">Ga</abbr></button>
+</li>
+<li class="metalloid">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Germanium">Ge</abbr></button>
+</li>
+<li class="metalloid">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Arsenic">As</abbr></button>
+</li>
+<li class="polyatomic-non-metal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Selenium">Se</abbr></button>
+</li>
+<li class="diatomic-nonmetal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Bromide">Br</abbr></button>
+</li>
+<li class="noble-gas">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Krypton">Kr</abbr></button>
+</li>
+<li class="alkali">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Rubidium">Rb</abbr></button>
+</li>
+<li class="alkaline">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Strontium">Sr</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Yttrium">Y</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Zirconium">Zr</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Niobium">Nb</abbr></button>
+</li>
+<li>
+    <button class="e data-bs-toggle="modal"" data-bs-target="#myModal"><abbr title="Molybdenum">Mo</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Technetium">Tc</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Ruthenium">Ru</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Rhodium">Ro</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Palladium">Pd</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Silver">Ag</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Cadmium">Cd</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Indium">In</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Tin">Sn</abbr></button>
+</li>
+<li class="metalloid">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Antimony">Sb</abbr></button>
+</li>
+<li class="metalloid">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Tellurium">Te</abbr></button>
+</li>
+<li class="diatomic-nonmetal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Iodine">I</abbr></button>
+</li>
+<li class="noble-gas">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Xenon">Xe</abbr></button>
+</li>
+<li class="alkali">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Caesium">Cs</abbr></button>
+</li>
+<li class="alkaline">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Barium">Ba</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Lanthanum">La</abbr></button>
+</li>
+<li id="cerium" class="lanthanide">
+     <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Cerium">Ce</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Praseodymium">Pr</abbr></button>
+</li>
+<li class="lanthanide" data-bs-target="#myModal">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Neodymium">Nd</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Promethium">Pm</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Samarium">Sm</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Europium">Eu</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Gadolinium">Gd</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Terbium">Td</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Dysprosium">Dy</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Holmium">Ho</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Erbium">Er</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Thulium">Tm</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Ytterbium">Yb</abbr></button>
+</li>
+<li class="lanthanide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Lutetium">Lu</abbr></button>
+</li>  
+<li id="hafnium">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Hafnium">Hf</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Tantalum">Ta</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Tungsten">W</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Rhenium">Re</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Osmium">Os</abbr></button>
+</li> 
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Iridium">Ir</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Platinum">Pt</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Gold">Au</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Mercury">Hg</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Thallium">Tl</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Lead">Pb</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Bismuth">Bi</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Polonium">Po</abbr></button>
+</li>
+<li class="metalloid">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Astatine">At</abbr></button>
+</li>
+<li class="noble-gas">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Radon">Rn</abbr></button>
+</li>
+<li class="alkali">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Francium">Fr</abbr></button>
+</li>
+<li class="alkaline">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Radium">Ra</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Actinium">Ac</abbr></button>
+</li>
+<li class="actinide" id="thorium" >
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Thorium">Th</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Protactinium">Pa</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Uranium">U</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Neptunium">Np</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Plutonium">Up</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Americium">Am</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Curium">Cm</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Berkelium">Bk</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Californium">Cf</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Einsteinium">Es</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Fermium">Fm</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Mendelevium">Md</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Nobelium">No</abbr></button>
+</li>
+<li class="actinide">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Lawrencium">Lr</abbr></button>
+</li>
+<li id="rutherfordium">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Rutherfordium">Rf</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Dubnium">Db</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Seaborgium">Sg</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Bohrium">Bh</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Hassium">Hs</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Meitnerium">Mt</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Darmstadtium">Ds</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Roentgenium">Rg</abbr></button>
+</li>
+<li>
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Copernicium">Cn</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Nihonium">Cn</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Flerovium">Fl</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Moscovium">Mc</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Livermorium">Lv</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Tennessine">Ts</abbr></button>
+</li>
+<li class="unknown">
+    <button class="e" data-bs-toggle="modal" data-bs-target="#myModal"><abbr title="Oganesson">Og</abbr></button>
+</li>
+</ol>
+  
+    </section>
+</main>
+
+<div class="modal fade modal-dark" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-light ">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close btn-dark text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+{% endblock %}
+
+{% block script %}
+    <script src="/static/apps.js"></script>
+{% endblock %}

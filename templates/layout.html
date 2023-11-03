@@ -1,54 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alchemy API: {% block title %}{% endblock %}</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ALchemy API</title>
 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/static/styles.css">
 </head>
-<body>
-    <header>
-        <a href="/"><img src="/static/Logo.svg" alt="Logo" height="32" class="logo__header"></a>
-        <button type="button" class="button__header"><i class="fa-solid fa-bars"></i></button>
-        <nav>
-            <div class="links__header">
-                <a href="/"><img src="/static/Logo.svg" alt="Logo" height="32" class="logo__header"></a>
-                <a href="/applications">Applications</a>
-                <a href="/#features">Features</a>
-                <a href="/api">API</a>
+<body class="bg-dark text-break">
+   <header class="text-end bg-black mx-2 rounded-3 overflow-hidden border-1 border-white border mx-auto">
+      <nav class="navbar navbar-dark navbar-expand-lg mx-auto">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="/"><img src="/static/Logo.svg" height="32" alt="Logo"></a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-dark"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                {% block links%}{% endblock %}
             </div>
-            <div class="flex socials__header">
-                <a href=""><i class="fa-brands fa-github"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-solid fa-mug-hot"></i></a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        {% block main%}{% endblock %}
-    </main>
-    <footer>
-        <a href="/"><img src="/static/Logo.svg" alt="Logo" height="48" class="logo__footer"></a>
-        <section>
-            <h3>Explore</h3>
-            <p class="link__footer">Applications</p>
-            <p class="link__footer">Features</p>
-            <p class="link__footer">API</p>
-        </section>
-        <section>
-            <h3>External</h3>
-            <p class="link__footer">GitHub</p>
-            <p class="link__footer">YouTube</p>
-        </section>
-        <div class="flex socials__footer">
-            <a href=""><i class="fa-brands fa-github"></i></a>
-            <a href=""><i class="fa-brands fa-youtube"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-solid fa-mug-hot"></i></a>
-        </div>
-        <p class="copyright">&copy; Spinei Victor 2023</p>
-    </footer>
-    <script src="https://kit.fontawesome.com/09c573bc29.js" crossorigin="anonymous"></script>
+         </div>
+      </div>
+      </nav>
+   </header>
+   {% block main%}{%endblock%}
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/09c573bc29.js" crossorigin="anonymous"></script>
+    {% block script %}{% endblock %}
 </body>
 </html>

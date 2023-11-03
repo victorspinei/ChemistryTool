@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+      
+body {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+html {
+    color-scheme: dark;
+}
+
+.text-purple-light-emphasis {
+    color: #C0B6FA;
+}
+
+.text-purple-light {
+    color: #A89AF5;
+}
+
+.text-purple-medium {
+    color: #907FF0;
+}
+.text-purple-dark {
+    color: #544B84;
+}
+
+.text-purple-black {
+    color: #1a0236;
+}
+
+@font-face {
+  font-family: Phenomena;
+  src:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/Phenomena-Regular.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Phenomena;
+  src:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/Phenomena-Bold.otf);
+  font-weight: bold;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Phenomena, script;
+  margin: 5vw;
+  background: #111;
+  color: #000;
+  counter-reset: element;
+}
+.periodic-table {
+  display: grid;
+  grid-column-gap: .5vw;
+  grid-row-gap: .5vw;
+  padding-left: 0;
+}
+.periodic-table > li {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 4.5vw;
+  border-radius: 3px;
+  background: rgb(91, 194, 234);
+  font-weight: bold;
+}
+.periodic-table > li:before {
+  counter-increment: element; 
+  content: counter(element);
+  position: absolute;
+  bottom: 5px;
+  left: 6px;
+  font-size: .9vw;
+  font-weight: lighter;
+}
+.periodic-table > li abbr {
+  font-size: 2.5vw;
+}
+#helium {
+  grid-column-start: 18;
+}
+#boron, #aluminium {
+  grid-column-start: 13;
+}
+#cerium, #thorium {
+  grid-column-start: 4;
+}
+.periodic-table > li:nth-child(n+58):nth-last-child(n+48) {
+  grid-row-start: 8;
+}
+.periodic-table > li:nth-child(n+90):nth-last-child(n+16) {
+  grid-row-start: 9;
+}
+.periodic-table:before {
+  display: block;
+  content: '';
+  grid-row: 8 / 10;
+  grid-column: 1 / 4;
+}
+.periodic-table .noble-gas {
+  background: rgb(234, 218, 36);
+}
+.periodic-table .diatomic-nonmetal {
+  background: rgb(234, 179, 127);
+}
+.periodic-table .alkali {
+  background: hsl(326, 52%, 84%);
+}
+.periodic-table .hydrogen {
+  background: rgb(163, 199, 210);  
+}
+.periodic-table .alkaline {
+  background: hsl(120, 52%, 84%);
+}
+.periodic-table .unknown {
+  background: hsl(210, 2%, 73%);
+}
+.periodic-table .lanthanide {
+  background: hsl(183, 54%, 84%);
+}
+.periodic-table .actinide {
+  background: hsl(82, 60%, 56%);  
+}
+.periodic-table .metalloid {
+  background: hsl(142, 60%, 56%);  
+}
+.periodic-table .polyatomic-non-metal {
+  background: hsl(358, 60%, 56%);  
+}
+
+@media all and (max-width: 1100px) {
+  #helium, #boron, #aluminium, #cerium, #thorium {
+  grid-column-start: auto;
+  }
+  .periodic-table {
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+  .periodic-table > li abbr {
+    font-size: 0;
+  }
+  .periodic-table > li {
+    padding: 1rem;
+  }
+  .periodic-table > li abbr:after {
+    content: attr(title);
+    font-size: 2rem;
+  }
+  .periodic-table > li:before {
+    font-size: 1rem;
+  }
+  .periodic-table > li:nth-child(n+58):nth-last-child(n+48) {
+  grid-row-start: auto !important;
+}
+  .periodic-table > li:nth-child(n+90):nth-last-child(n+16) {
+    grid-row-start: auto !important;
+  }
+  .periodic-table:before {
+    display: none !important;
+  }
+}
+@media all and (max-width: 750px) {
+  body {
+    margin: 2vw;
+  }
+  .periodic-table {
+    grid-template-columns: 1fr 1fr;
+  }
+  .periodic-table > li {
+    height: auto;
+    font-size: 3vw;
+  }
+}
+@media all and (max-width: 550px) {
+  .periodic-table {
+    grid-template-columns: 1fr;
+  }
+}
+
+.e {
+  border: none;
+  background: transparent;
+  font-family: Phenomena, script;
+}
