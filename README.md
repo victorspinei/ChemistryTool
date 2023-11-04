@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./static/screenshot.png)
+![](./api/static/screenshot.png)
 
 ### Links
 
